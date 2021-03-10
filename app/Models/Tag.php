@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Tag extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'post_id',
-        'comment',
         'name',
-        'email'
     ];
-    public function post()
-    {
-        return $this->belongsTo('App\Models\Post');
-    }
-}
 
+    //public function posts()
+    //{
+    //    return $this->belongsToMany('App\Models\Post', 'posts_tags');
+    //}
+}
