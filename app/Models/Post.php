@@ -13,9 +13,9 @@ class Post extends Model
         'content'
     ];
 
-    //public function comments()
-    //{
-    //    return $this->belongsTo(Comment::class);
-    //}
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }
 
