@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\PostsAdminController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-use App\Http\Controllers\TestController;
-use App\Http\Controllers\PostsController;
-Route::get('ola/{nome}', [TestController::class, 'index']);
-Route::get('notas', [TestController::class, 'notas']);
-Route::get('blog', [PostsController::class, 'index']);
 
+
+Route::get('/', [PostsController::class, 'index']);
+
+Route::get('admin', [PostsAdminController::class, 'index']);
 
 
