@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Request;
+//use Illuminate\Support\Facades\PostRequest;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
@@ -32,8 +33,9 @@ class PostsAdminController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        dd($this->post->create($request::all()));
+        $this->post->create($request::all());
+        return redirect()->route('admin.posts.index');
     }
 }
