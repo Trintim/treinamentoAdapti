@@ -3,7 +3,11 @@
 @section('content')
     
     <h1>Blog Admin</h1>
-    
+
+    <a href="{{ route('admin.posts.create') }}"><button type="button" class="btn btn-success">New Post</button></a>
+    <br>
+    <br>
+
     <table class="table">
         <tr>
             <th>ID</th>
@@ -15,7 +19,10 @@
         <tr>
             <td>{{$post->id}}</td>
             <td>{{$post->title}}</td>
-            <td> </td>
+            <td> 
+                <a href="{{ route('admin.posts.edit', ['id'=>$post->id]) }}"><button type="button" class="btn btn-info">Edit</button></a>
+                <a href="{{ route('admin.posts.destroy', ['id'=>$post->id]) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+            </td>
         </tr>
         @endforeach
     </table>

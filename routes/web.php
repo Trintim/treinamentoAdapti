@@ -25,5 +25,6 @@ Route::get('admin/posts/create', [PostsAdminController::class, 'create'])->name(
 Route::post('admin/posts/store', [PostsAdminController::class, 'store'])->name('admin.posts.store');
 Route::get('admin/posts/edit/{id}', [PostsAdminController::class, 'edit'])->name('admin.posts.edit');
 Route::put('admin/posts/updade/{id}', [PostsAdminController::class, 'update'])->name('admin.posts.update');
+Route::get('admin/posts/destroy/{id}', [PostsAdminController::class, 'destroy'])->name('admin.posts.destroy');
 
 
