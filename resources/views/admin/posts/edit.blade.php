@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h1>Create new Post</h1>
+    <h1>Edit Post: {{$post->title}}</h1>
 
     @if($errors->any())
         
@@ -14,13 +14,14 @@
 
     @endif
 
-    {!! Form::open(['route'=>'admin.posts.store', 'method'=>'post']) !!}
+    {!! Form::model($post, ['route'=>['admin.posts.update', $post->id], 'method'=>'put']) !!}
 
     @include('admin.posts._form')
 
+    
     <div class="form-group">
         
-        {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}<br>
+        {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}<br>
 
     </div>
 
