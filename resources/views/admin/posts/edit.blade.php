@@ -16,14 +16,17 @@
 
     {!! Form::model($post, ['route'=>['admin.posts.update', $post->id], 'method'=>'put']) !!}
 
-    @include('admin.posts._form')
+        @include('admin.posts._form')
 
-    
-    <div class="form-group">
-        
-        {!! Form::submit('Save', ['class'=>'btn btn-primary']) !!}<br>
+            <div class="form-group">
+                {!! Form::label('tags', 'Tags:', ['class'=>'control-label']) !!}<br>
+                {!! Form::textarea('tags', $post->tagList, ['class'=> 'form-control']) !!}<br>
+            </div>
 
-    </div>
+            <div class="form-group">
+                {!! Form::submit('save', ['class'=>'btn btn-primary']) !!}<br>
+            
+            </div>
 
     {!! Form::close() !!}
 
