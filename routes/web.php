@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostsAdminController;
-use App\Http\Controllers\TestController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,7 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', [PostsController::class, 'index']);
 
-Route::get('admin', [PostsAdminController::class, 'index']);
-
+Route::get('admin/posts', [PostsAdminController::class, 'index'])->name('admin.posts.index');
+Route::get('admin/posts/create', [PostsAdminController::class, 'create'])->name('admin.posts.create');
+Route::post('admin/posts/store', [PostsAdminController::class, 'store'])->name('admin.posts.store');
 
