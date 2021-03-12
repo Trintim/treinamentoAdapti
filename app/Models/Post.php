@@ -26,7 +26,7 @@ class Post extends Model
     public function getTagListAttribute()
     {
         $tagsNames = [];
-        $tags = $this->tags->all();
+        $tags = $this->tags;
         foreach ($tags as $tag) {
             array_push($tagsNames, $tag->name);
         }

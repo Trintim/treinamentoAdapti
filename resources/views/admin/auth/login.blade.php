@@ -5,7 +5,7 @@ BLOG ADMIN
 @stop
 
 @section('content')
-<h1>Create new Post</h1>
+<h1>Login</h1>
 
 @if($errors->any())
 <ul class="alert">
@@ -15,13 +15,13 @@ BLOG ADMIN
 </ul>
 @endif
 
-{!! Form::open(['route'=>'admin.posts.store', 'method'=>'post']) !!}
+{!! Form::open(['route'=>'auth.authenticate', 'method'=>'post']) !!}
 
-@include('admin.posts._form')
+@include('admin.auth._form')
 
 <div class="form-group">
-    {!! Form::label('tags', 'Tags:') !!}<br>
-    {!! Form::text('tags', null, ['class' => 'form-control']) !!}<br>
+    {!! Form::checkbox('remember', 'value', true) !!}
+    {!! Form::label('remember', 'Remember me:') !!}<br>
 </div>
 
 <div class="form-group">

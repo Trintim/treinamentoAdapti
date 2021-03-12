@@ -12,11 +12,11 @@ class Comment extends Model
         'post_id',
         'comment',
         'name',
-        'email'
+        'email',
     ];
+
     public function post()
     {
         return $this->belongsTo('App\Models\Post');
     }
 }
-

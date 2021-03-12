@@ -3,10 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Post;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\posts_tags;
 
-class PostsTableSeeder extends Seeder
+class posts_tagsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +14,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        Post::truncate();
-        Post::factory()->count(10)->create();
+        posts_tags::truncate();
+        posts_tags::factory()->count(10)->create();
     }
 }
