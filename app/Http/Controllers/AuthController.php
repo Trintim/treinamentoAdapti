@@ -8,7 +8,7 @@ use App\Http\Requests\AuthRequest;
 
 class AuthController extends Controller
 {
-    public function redirect()
+    public function redirectTo()
     {
         if (Auth::check()) {
             return redirect()->route('admin.posts.index');
@@ -22,7 +22,7 @@ class AuthController extends Controller
         return view('admin.auth.login');
     }
 
-    public function authenticate(Request $request)
+    public function authenticate(AuthRequest $request)
     {
         $credentials = $request->only('email', 'password');
 

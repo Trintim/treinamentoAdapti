@@ -5,7 +5,7 @@ Blog Trin Admir
 @stop
 
 @section('content')
-<h1>Blog Admin</h1>
+<h1>Blog Trin</h1>
 
 <a href="{{ route('admin.posts.create') }}"><button type="button" class="btn btn-success">New Post</button></a>
 

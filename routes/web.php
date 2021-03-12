@@ -18,7 +18,6 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', [PostsController::class, 'index'])->name('home');
 
-
 Route::group(['prefix' => 'auth'], function () {
     Route::get('', [AuthController::class, 'redirect'])->name('auth.redirect');
     Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
