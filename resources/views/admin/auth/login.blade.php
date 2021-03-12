@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-BLOG ADMIN
+Blog do trin
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@ BLOG ADMIN
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Post', ['class'=>'btn btn-primary']) !!}<br>
+    {!! Form::submit('Login', ['class'=>'btn btn-primary']) !!}<br>
 </div>
 
 {!! Form::close() !!}

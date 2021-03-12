@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-BLOG
+Blog do Trin
 @stop
 
 @section('content')

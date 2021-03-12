@@ -22,7 +22,7 @@ class AuthController extends Controller
         return view('admin.auth.login');
     }
 
-    public function authenticate(AuthRequest $request)
+    public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
